@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Usan Nuden Gunjee 💌</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Dancing+Script:wght@700&display=swap');
+
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(rgba(208, 122, 122, 0.45), rgba(245, 148, 148, 0.45)), 
+                  url('background.jpg') no-repeat center center fixed;
+      background-size: contain;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      cursor: default;
+    }
+
+    .container {
+      text-align: center;
+      padding: 30px;
+      max-width: 90%;
+      animation: fadeIn 1.8s ease-in-out;
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(3.2rem, 9vw, 6.5rem);
+      color: #fff;
+      margin-bottom: 20px;
+      text-shadow: 0 6px 12px rgba(255,105,180,0.6);
+    }
+
+    .subtitle {
+      font-size: clamp(1.3rem, 4.5vw, 2.1rem);
+      color: #fff;
+      margin: 20px 0 40px;
+    }
+
+    .hearts { position:absolute; top:0; left:0; right:0; bottom:0; pointer-events:none; overflow:hidden; }
+    .heart {
+      position: absolute;
+      color: #fff;
+      font-size: 1.8rem;
+      animation: float 12s infinite linear;
+      opacity: 0.7;
+      text-shadow: 0 0 10px rgba(255,182,193,0.9);
+    }
+
+    .btn-group {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      font-size: 1.4rem;
+      font-weight: 600;
+      padding: 18px 48px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .yes   { background: #ff4d6d; color: white; }
+    .yes:hover   { transform: scale(1.15) rotate(3deg); background: #ff2e55; }
+    .no    { background: #fff; color: #ff4d6d; border: 3px solid #ff4d6d; }
+    .no:hover  { background: #fff0f5; transform: translateY(-3px); }
+    .maybe { background: #ffd54f; color: #333; font-weight: 700; }
+    .maybe:hover { transform: scale(1.12); background: #ffca28; }
+
+    .message {
+      margin-top: 60px;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #fff;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+    .visible { opacity: 1 !important; }
+
+    #maybeScreen {
+      display: none;
+      text-align: center;
+      max-width: 90%;
+    }
+
+    #maybeImage {
+      max-width: 85%;
+      max-height: 55vh;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      margin: 30px auto 40px;
+    }
+
+    @keyframes float { 0% { transform: translateY(100vh) rotate(0deg); } 100% { transform: translateY(-15vh) rotate(720deg); } }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
+
+    @media (max-width: 500px) {
+      .btn-group { flex-direction: column; gap: 25px; }
+      .btn { padding: 16px 60px; font-size: 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hearts" id="hearts"></div>
+
+  <div class="container" id="mainScreen">
+    <h1>Awarga tom Aduudaa</h1>
+    <div class="subtitle">I've got something important to ask you 💕</div>
+
+    <h1 style="margin: 50px 0 30px; font-size: clamp(2.8rem, 8vw, 5rem);">
+      Will you be my Балынчик?
+    </h1>
+
+    <div 1 class="btn-group">
+      <button class="btn yes" onclick="sayYes()">Yes!! 🥰</button>
+      <button class="btn no" id="noBtn">No</button>
+      <button class="btn maybe" onclick="showMaybe()">Not sure 🤔</button>
+    </div 1>
+    
+    <div class="message" id="loveMessage">
+        <img id="maybeImage" 
+        src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnRybDg5Z2hia2ZmbXUwdGs5cXB1MGRhaWJpbm51bGgzMXlyZHFwYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26ufm9YcCl3Cb7dwk/giphy.gif" 
+        alt="Cute thinking GIF">
+        Yayyyy!!! I love You my little pony <br>
+      Cant wait 
+    </div>
+  </div>
+
+  <!-- Not sure Screen -->
+  <div id="maybeScreen">
+    <h1 style="font-size: clamp(2.6rem, 7.5vw, 4.8rem); color: #fff; margin-bottom: 15px;">
+      Take your time... but not too long 😏
+    </h1>
+    
+    <img id="maybeImage" 
+         src="https://media.giphy.com/media/Y7RM7CetuHGOJUoXNv/giphy.gif" 
+         alt="Cute thinking GIF">
+
+    <button class="btn yes" style="padding:20px 60px; font-size:1.6rem;" onclick="backToMain()">
+      Think again 🥺💕
+    </button>
+  </div>
+
+  <script>
+    // Floating hearts
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '♥';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 8 + 9) + 's';
+      heart.style.fontSize = (Math.random() * 1.4 + 1.2) + 'rem';
+      document.getElementById('hearts').appendChild(heart);
+      setTimeout(() => heart.remove(), 16000);
+    }
+    setInterval(createHeart, 400);
+
+    // Moving "No" button
+    const noBtn = document.getElementById('noBtn');
+    noBtn.addEventListener('mouseover', () => {
+      const x = Math.random() * (window.innerWidth - 200);
+      const y = Math.random() * (window.innerHeight - 200);
+      noBtn.style.position = 'absolute';
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
+    });
+
+    function sayYes() {
+      document.getElementById('mainScreen').style.display = 'none';
+      document.getElementById('maybeScreen').style.display = 'none';
+      document.getElementById('loveMessage').classList.add('visible');
+      for(let i = 0; i < 70; i++) setTimeout(createHeart, i * 60);
+    }
+
+    function showMaybe() {
+      document.getElementById('mainScreen').style.display = 'none';
+      document.getElementById('maybeScreen').style.display = 'block';
+    }
+
+    function backToMain() {
+      document.getElementById('maybeScreen').style.display = 'none';
+      document.getElementById('mainScreen').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
